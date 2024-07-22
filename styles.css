@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #87CEEB;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#farm-container {
+    position: relative;
+}
+
+#farm {
+    display: grid;
+    grid-template-columns: repeat(6, 50px); /* Six columns */
+    grid-template-rows: repeat(6, 50px); /* Six rows */
+    gap: 3px;
+    position: relative;
+}
+
+.tile {
+    width: 50px;
+    height: 50px;
+    background-color: #32CD32; /* Green color for un-dug soil */
+    border: 1px solid #000;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+    overflow: hidden;
+}
+
+.tile.dug {
+    background-color: #8B4513; /* Darker brown color for dug soil */
+}
+
+#controls {
+    margin-top: 20px;
+}
+
+button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+#status {
+    margin-top: 20px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.coin {
+    position: absolute;
+    font-size: 20px;
+    color: gold;
+    animation: fadeUp 1s forwards;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+#dig-effect {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url('shovel.png') no-repeat center center;
+    background-size: contain;
+    display: none;
+    z-index: 10;
+}
